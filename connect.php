@@ -13,7 +13,8 @@ $dbname = "majstormika";
 
 if(isset($_POST['kliknuto'])) {
     $file = "assets/data.json";
-    $arr = array(
+    $temp = json_decode(file_get_contents($file), true);
+    $data = array(
         'ime'     => $_POST['ime'],
         'email'    => $_POST['email'],
         'telefon'    => $_POST['telefon'],
@@ -21,7 +22,8 @@ if(isset($_POST['kliknuto'])) {
         'model'    => $_POST['model'],
         'msg'    => $_POST['msg']
     );
-    $json_string = json_encode($arr);
+    array_push($temp,$data);
+    $json_string = json_encode($temp);
     file_put_contents($file, $json_string);
 }
 
