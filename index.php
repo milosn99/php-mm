@@ -19,9 +19,9 @@
 <body>
 
 	<header class='onama'>
-		<h2><a href="index.html"><img src="assets/img/logo.png" width="70px"></a></h2>
+		<h2><a href="index.php"><img src="assets/img/logo.png" width="70px"></a></h2>
 		<nav>
-			<li><a href="index.html">Početna</a></li>
+			<li><a href="index.php">Početna</a></li>
 			<li><a href="">Tim</a></li>
 			<li><a href="">Lokacije</a></li>
 			<li><a href="">Zakaži</a></li>
@@ -102,54 +102,33 @@
 
 	<section>
 
-		<div class="forma-glavna">
-			<form name="FormaNarucivanje">
-				<ul class="forma-polje">
-					<li>
-						<label for="ime">Ime i prezime</label>
-						<input type="text" id="ime" name="Ime" placeholder="Unesi ime i prezime">
-					</li>
-					<li>
-						<label for="email">E-mail</label>
-						<input type="email" id="email" name="EMail" placeholder="Unesi e-mail adresu">
-					</li>
-					<li>
-						<label for="telefon">Broj telefona</label>
-						<input type="tel" id="telefon" name="Telefon" placeholder="Unesi broj telefona">
-					</li>
-					<li>
-						<label for="datum">Datum popravke</label>
-						<input type="date" id="datum" placeholder="Unesi datum popravke">
-					</li>
-					<li>
-						<label for="model">Model</label>
-						<select id="modeli" name="modeli">
+		<form method="post" action="connect.php">
+
+						Ime i prezime
+						<input type="text" id="ime" name="ime" placeholder="Unesi ime i prezime">
+
+						E-mail
+						<input type="email" id="email" name="email" placeholder="Unesi e-mail adresu">
+
+						Broj telefona
+						<input type="tel" id="telefon" name="telefon" placeholder="Unesi broj telefona">
+
+						Datum popravke
+						<input type="date" id="datum" name="datum" placeholder="Unesi datum popravke">
+
+						Model
+						<select id="modeli" name="model">
 							<option value="x6">X6</option>
 							<option value="530d">Serija 5</option>
 							<option value="m8">M8</option>
 						  </select>
-					</li>
-					<li>
-						<label for="message">Kratak opis šta si pokvario na bemveu</label>
-						<textarea rows="3" id="message" placeholder="Unesi podatke o kvaru"></textarea>
-					</li>
-					<li>
-						<ul class="forma-unutra">
-							<li>
-								<input type="checkbox" id="potvrda" onclick="kliknuto()">
-								<label for="potvrda">Želim da majstor Mika nosi masku kad dođem na popravku</label>
-							</li>
-						</ul>
-					</li>
-					<li>
-						<p id="cepano" style="display:none">Će nosi</p>
-					</li>
-					<li>
-						<button type="submit" class='btn' onclick="validacija()">Zakaži popravku BMW-a</button>
-					</li>
-				</ul>
+
+						Kratak opis šta si pokvario na bemveu
+						<textarea rows="3" id="message" name="msg" placeholder="Unesi podatke o kvaru"></textarea>
+
+						<button type="submit" class='btn' name="kliknuto">Zakaži popravku BMW-a</button>
 			</form>
-		</div>
+
 		<br>
 		</section>
 		
@@ -166,6 +145,7 @@
 		  <script src="http://code.jquery.com/jquery.min.js"></script>
 		  <script src="assets/js/vegas.min.js"></script>
 		  <script src="assets/js/script.js"></script>
+
 </body>
 
 </html>
